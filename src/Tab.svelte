@@ -10,22 +10,22 @@
 </script>
 
 <style>
-	button {
-		background: none;
+	.svelte-tabs__tab {
 		border: none;
 		border-bottom: 2px solid white;
-		border-radius: 0;
-		margin: 0;
-		color: #ccc;
+		color: #000000;
     cursor: pointer;
+    list-style: none;
+    display: inline-block;
+    padding: 0.5em 0.75em;
 	}
 	
 	.svelte-tabs__selected {
 		border-bottom: 2px solid teal;
-		color: #333;
+    color: teal;
 	}
 </style>
 
-<button class="svelte-tabs__tab {$selectedTab === tab ? 'svelte-tabs__selected' : ''}" on:click={() => selectTab(tab)}>
+<li role="tab" class="svelte-tabs__tab {$selectedTab === tab ? 'svelte-tabs__selected' : ''}" on:click={() => selectTab(tab)}>
 	<slot></slot>
-</button>
+</li>

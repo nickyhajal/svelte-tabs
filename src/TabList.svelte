@@ -1,9 +1,11 @@
 <style>
 	.svelte-tabs__tab-list {
-		border-bottom: 1px solid teal;
+    border-bottom: 1px solid teal;
+    margin: 0;
+    padding: 0;
 	}
 </style>
 
-<div class="svelte-tabs__tab-list">
+<ul role="tablist" class="svelte-tabs__tab-list">
   <slot></slot>
-</div>
+</ul>

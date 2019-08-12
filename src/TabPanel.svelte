@@ -9,7 +9,7 @@
 </script>
 
 {#if $selectedPanel === panel}
-  <div class="svelte-tabs__tab-panel">
+  <div class="svelte-tabs__tab-panel" role="tabpanel">
     <slot></slot>
   </div>
 {/if}
