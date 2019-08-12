@@ -9,43 +9,41 @@
   const tabs = [];
   const panels = [];
 
-  const activeTab = writable(null);
-  const activePanel = writable(null);
+  const selectedTab = writable(null);
+  const selectedPanel = writable(null);
+
+  function removeAndUpdateSelected(arr, item, selectedStore) {
+    const index = arr.indexOf(item);
+    arr.splice(index, 1);
+    selectedStore.update(selected => selected === item ? (arr[index] || arr[arr.length - 1]) : selected);
+  }
+
+  function registerItem(arr, item, selectedStore) {
+    arr.push(item);
+    selectedStore.update(selected => selected || item);
+    onDestroy(() => removeAndUpdateSelected(arr, item, selectedStore));
+  }
 
   setContext(TABS, {
     registerTab(tab) {
-      tabs.push(tab);
-      activeTab.update(active => active || tab);
-
-      onDestroy(() => {
-        const index = tabs.indexOf(tab);
-        tabs.splice(index, 1);
-        activeTab.update(active => active === tab ? (tabs[i] || tabs[tabs.length - 1]) : active);
-      });
+      registerItem(tabs, tab, selectedTab);
     },
 
     registerPanel(panel) {
-      panels.push(panel);
-      activePanel.update(active => active || panel);
-
-      onDestroy(() => {
-        const index = panels.indexOf(panel);
-        panels.splice(index, 1);
-        activePanel.update(active => active === panel ? (panels[i] || panels[panels.length - 1]) : active);
-      });
+      registerItem(panels, panel, selectedPanel);
     },
 
     selectTab(tab) {
       const index = tabs.indexOf(tab);
-      activeTab.set(tab);
-      activePanel.set(panels[index]);
+      selectedTab.set(tab);
+      selectedPanel.set(panels[index]);
     },
 
-    activeTab,
-    activePanel
+    selectedTab,
+    selectedPanel
   });
 </script>
 
-<div class="tabs">
+<div class="svelte-tabs">
   <slot></slot>
 </div>

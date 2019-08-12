@@ -4,7 +4,7 @@
   import { TABS } from './Tabs.svelte';
 
   const tab = {};
-  const { registerTab, selectTab, activeTab } = getContext(TABS);
+  const { registerTab, selectTab, selectedTab } = getContext(TABS);
 
   registerTab(tab);
 </script>
@@ -17,14 +17,15 @@
 		border-radius: 0;
 		margin: 0;
 		color: #ccc;
+    cursor: pointer;
 	}
 	
-	.selected {
+	.svelte-tabs__selected {
 		border-bottom: 2px solid teal;
 		color: #333;
 	}
 </style>
 
-<button class:selected="{$activeTab === tab}" on:click="{() => selectTab(tab)}">
+<button class="svelte-tabs__tab {$selectedTab === tab ? 'svelte-tabs__selected' : ''}" on:click={() => selectTab(tab)}>
 	<slot></slot>
 </button>

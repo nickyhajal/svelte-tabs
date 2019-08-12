@@ -3,11 +3,13 @@
   import { TABS } from './Tabs.svelte';
 
   const panel = {};
-  const { registerPanel, activePanel } = getContext(TABS);
+  const { registerPanel, selectedPanel } = getContext(TABS);
 
   registerPanel(panel);
 </script>
 
-{#if $activePanel === panel}
-  <slot></slot>
+{#if $selectedPanel === panel}
+  <div class="svelte-tabs__tab-panel">
+    <slot></slot>
+  </div>
 {/if}

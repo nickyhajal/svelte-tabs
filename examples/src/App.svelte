@@ -1,11 +1,16 @@
 <script>
 	import { Tabs, Tab, TabList, TabPanel } from 'svelte-tabs';
-
-	export let name;
 </script>
 
+<!-- Example of how to override tab styles -->
 <style>
+	/* :global(.svelte-tabs button.svelte-tabs__selected) {
+		border-bottom: 2px solid red;
+	}
 
+	:global(.svelte-tabs button.svelte-tabs__tab) {
+		background: blue;
+	} */
 </style>
 
 <Tabs>
