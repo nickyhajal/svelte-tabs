@@ -13,6 +13,8 @@
 	} */
 </style>
 
+<h1>Svelte Tabs</h1>
+
 <Tabs>
 	<TabList>
 		<Tab>One</Tab>
