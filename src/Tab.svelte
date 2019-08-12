@@ -12,7 +12,7 @@
 <style>
 	.svelte-tabs__tab {
 		border: none;
-		border-bottom: 2px solid white;
+		border-bottom: 2px solid transparent;
 		color: #000000;
     cursor: pointer;
     list-style: none;
