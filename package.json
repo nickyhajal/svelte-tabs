@@ -15,11 +15,13 @@
     "svelte": "^3.0.0"
   },
   "keywords": [
-    "svelte"
+    "svelte",
+    "tabs"
   ],
+  "license": "MIT",
   "contributors": [
     "Rich Harris",
-    "Joe Attardi"
+    "Joe Attardi <jattardi@gmail.com> (https://joeattardi.codes)"
   ],
   "files": [
     "src",
