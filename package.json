@@ -1,5 +1,6 @@
 {
   "name": "svelte-tabs",
+  "version": "1.0.0",
   "module": "index.mjs",
   "main": "index.js",
   "scripts": {
@@ -15,6 +16,10 @@
   },
   "keywords": [
     "svelte"
+  ],
+  "contributors": [
+    "Rich Harris",
+    "Joe Attardi"
   ],
   "files": [
     "src",
