@@ -24,8 +24,6 @@
     "Joe Attardi <jattardi@gmail.com> (https://joeattardi.codes)"
   ],
   "files": [
-    "src",
-    "index.mjs",
-    "index.js"
+    "dist"
   ]
 }
