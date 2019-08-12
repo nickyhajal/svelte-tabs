@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rollup -c",
+    "build:watch": "rollup -cw",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
