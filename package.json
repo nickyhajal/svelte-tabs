@@ -1,8 +1,8 @@
 {
   "name": "svelte-tabs",
   "version": "1.0.0",
-  "module": "index.mjs",
-  "main": "index.js",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
   "scripts": {
     "build": "rollup -c",
     "build:watch": "rollup -cw",
