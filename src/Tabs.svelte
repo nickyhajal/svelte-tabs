@@ -51,15 +51,8 @@
 
   afterUpdate(() => {
     for (let i = 0; i < tabs.length; i++) {
-      controls.update(controlsData => {
-        controlsData[tabs[i].id] = panels[i].id;
-        return controlsData;
-      });
-
-      labeledBy.update(labeledByData => {
-        labeledByData[panels[i].id] = tabs[i].id;
-        return labeledByData;
-      });
+      controls.update(controlsData => ({...controlsData, [tabs[i].id]: panels[i].id}));
+      labeledBy.update(labeledByData => ({...labeledByData, [panels[i].id]: tabs[i].id}));
     }
   });
 </script>
