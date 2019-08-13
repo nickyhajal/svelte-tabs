@@ -3,11 +3,14 @@
 </script>
 
 <script>
-  import { setContext, onDestroy } from 'svelte';
+  import { setContext, onDestroy, onMount } from 'svelte';
   import { writable } from 'svelte/store';
 
   const tabs = [];
   const panels = [];
+
+  const controls = writable({});
+  const labeledBy = writable({});
 
   const selectedTab = writable(null);
   const selectedPanel = writable(null);
@@ -40,7 +43,24 @@
     },
 
     selectedTab,
-    selectedPanel
+    selectedPanel,
+
+    controls,
+    labeledBy
+  });
+
+  onMount(() => {
+    for (let i = 0; i < tabs.length; i++) {
+      controls.update(controlsData => {
+        controlsData[tabs[i].id] = panels[i].id;
+        return controlsData;
+      });
+
+      labeledBy.update(labeledByData => {
+        labeledByData[panels[i].id] = tabs[i].id;
+        return labeledByData;
+      });
+    }
   });
 </script>
 

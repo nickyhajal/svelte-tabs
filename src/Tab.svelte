@@ -1,10 +1,16 @@
 <script>
   import { getContext } from 'svelte';
 
+  import getId from './id';
   import { TABS } from './Tabs.svelte';
 
-  const tab = {};
-  const { registerTab, selectTab, selectedTab } = getContext(TABS);
+  const tab = {
+    id: getId()
+  };
+  const { registerTab, selectTab, selectedTab, controls } = getContext(TABS);
+
+  let isSelected;
+  $: isSelected = $selectedTab === tab;
 
   registerTab(tab);
 </script>
@@ -26,6 +32,12 @@
 	}
 </style>
 
-<li role="tab" class="svelte-tabs__tab {$selectedTab === tab ? 'svelte-tabs__selected' : ''}" on:click={() => selectTab(tab)}>
+<li 
+  role="tab"
+  id={tab.id}
+  aria-controls={$controls[tab.id]}
+  aria-selected={isSelected}
+  class="svelte-tabs__tab {isSelected ? 'svelte-tabs__selected' : ''}"
+  on:click={() => selectTab(tab)}>
 	<slot></slot>
 </li>
