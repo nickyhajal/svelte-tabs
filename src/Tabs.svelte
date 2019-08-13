@@ -3,7 +3,7 @@
 </script>
 
 <script>
-  import { setContext, onDestroy, onMount } from 'svelte';
+  import { afterUpdate, setContext, onDestroy } from 'svelte';
   import { writable } from 'svelte/store';
 
   const tabs = [];
@@ -49,7 +49,7 @@
     labeledBy
   });
 
-  onMount(() => {
+  afterUpdate(() => {
     for (let i = 0; i < tabs.length; i++) {
       controls.update(controlsData => {
         controlsData[tabs[i].id] = panels[i].id;
