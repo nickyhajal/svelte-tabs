@@ -1,6 +1,6 @@
 <style>
 	.svelte-tabs__tab-list {
-    border-bottom: 1px solid #4F81E5;
+    border-bottom: 1px solid #CCCCCC;
     margin: 0;
     padding: 0;
 	}
