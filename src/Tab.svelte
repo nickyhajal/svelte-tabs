@@ -33,6 +33,10 @@
     padding: 0.5em 0.75em;
 	}
 	
+  .svelte-tabs__tab:focus {
+    outline: thin dotted;
+  }
+
 	.svelte-tabs__selected {
 		border-bottom: 2px solid teal;
     color: teal;
