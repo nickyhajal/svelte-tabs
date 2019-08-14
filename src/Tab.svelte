@@ -34,10 +34,6 @@
 	}
 	
   .svelte-tabs__tab:focus {
-    outline: none;
-  }
-
-  .svelte-tabs__tab.svelte-tabs__keyboard:focus {
     outline: thin dotted;
   }
 
