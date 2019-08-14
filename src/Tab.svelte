@@ -34,6 +34,10 @@
 	}
 	
   .svelte-tabs__tab:focus {
+    outline: none;
+  }
+
+  .svelte-tabs__tab.svelte-tabs__keyboard:focus {
     outline: thin dotted;
   }
 
@@ -50,7 +54,8 @@
   aria-controls={$controls[tab.id]}
   aria-selected={isSelected}
   tabindex="{isSelected ? 0 : -1}"
-  class="svelte-tabs__tab {isSelected ? 'svelte-tabs__selected' : ''}"
+  class:svelte-tabs__selected={isSelected}
+  class="svelte-tabs__tab"
   on:click={() => selectTab(tab)}>
 	<slot></slot>
 </li>
