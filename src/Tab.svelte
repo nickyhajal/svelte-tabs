@@ -38,8 +38,8 @@
   }
 
 	.svelte-tabs__selected {
-		border-bottom: 2px solid teal;
-    color: teal;
+		border-bottom: 2px solid #4F81E5;
+    color: #4F81E5;
 	}
 </style>
 
