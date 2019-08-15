@@ -49,6 +49,20 @@ Below are CSS selectors that can be used for the different components in this li
 
 As a last resort, if you can't get the right specificity, you can always use `!important`.
 
+## Development
+
+- Fork and clone the repository, then run `npm install`.
+- From the repository root, run `npm link`.
+- From the repository root, run `npm run build:watch`.
+- From the `examples` directory, run `npm link svelte-tabs`.
+- From the `examples` directory, run `npm run dev`.
+- Go to [http://localhost:5000](http://localhost:5000).
+- You now have a running development environment. Changes you make to the component will be reflected in the app.
+
+## Running tests
+
+To do a single run of the tests, run `npm test`. To run the tests in watch mode, run `npm run dev:watch`.
+
 ## Credits
 
 Derived from the code at [https://svelte.dev/repl/8e68120858e5322272dc9136c4bb79cc?version=3.7.0](https://svelte.dev/repl/8e68120858e5322272dc9136c4bb79cc?version=3.7.0) by Rich Harris
