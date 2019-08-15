@@ -29,6 +29,13 @@
     "Rich Harris",
     "Joe Attardi <jattardi@gmail.com> (https://joeattardi.codes)"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joeattardi/svelte-tabs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joeattardi/svelte-tabs/issues"
+  },
   "files": [
     "dist"
   ]
