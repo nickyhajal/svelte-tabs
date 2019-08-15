@@ -6,9 +6,15 @@
   "scripts": {
     "build": "rollup -c",
     "build:watch": "rollup -cw",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.0.0",
+    "@testing-library/svelte": "^1.8.0",
+    "jest": "^24.8.0",
+    "jest-transform-svelte": "^2.0.2",
     "rollup": "^1.11.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-svelte": "^5.0.0",
