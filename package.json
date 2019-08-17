@@ -1,6 +1,7 @@
 {
   "name": "svelte-tabs",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "svelte": "src/index.js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "scripts": {
@@ -37,6 +38,12 @@
     "url": "https://github.com/joeattardi/svelte-tabs/issues"
   },
   "files": [
-    "dist"
+    "dist",
+    "src/id.js",
+    "src/index.js",
+    "src/Tab.svelte",
+    "src/TabList.svelte",
+    "src/TabPanel.svelte",
+    "src/Tabs.svelte"
   ]
 }
