@@ -34,6 +34,10 @@ A tabs component for Svelte
 </Tabs>
 ```
 
+## Props
+
+- `initialSelectedIndex` (number): The index of the tab to initially select, when the Tabs component is mounted.
+
 ## Overriding styling
 
 svelte-tabs comes with a basic default style, but it can be overridden. To override the styles to use your own, you will need to use global styles that have a higher specificity than the built-in styles.

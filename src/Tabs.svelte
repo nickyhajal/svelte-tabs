@@ -3,8 +3,10 @@
 </script>
 
 <script>
-  import { afterUpdate, setContext, onDestroy, tick } from 'svelte';
+  import { afterUpdate, setContext, onDestroy, onMount, tick } from 'svelte';
   import { writable } from 'svelte/store';
+
+  export let initialSelectedIndex = 0;
 
   const tabElements = [];
   const tabs = [];
@@ -54,6 +56,10 @@
 
     controls,
     labeledBy
+  });
+
+  onMount(() => {
+    selectTab(tabs[initialSelectedIndex]);
   });
 
   afterUpdate(() => {
