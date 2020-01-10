@@ -36,7 +36,7 @@ A tabs component for Svelte
 
 ## Props
 
-- `initialSelectedIndex` (number): The index of the tab to initially select, when the Tabs component is mounted.
+- `selectedTabIndex` (number): The index of the tab to initially select, when the Tabs component is mounted.
 
 ## Overriding styling
 

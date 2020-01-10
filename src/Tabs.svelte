@@ -6,7 +6,7 @@
   import { afterUpdate, setContext, onDestroy, onMount, tick } from 'svelte';
   import { writable } from 'svelte/store';
 
-  export let initialSelectedIndex = 0;
+  export let selectedTabIndex = 0;
 
   const tabElements = [];
   const tabs = [];
@@ -31,9 +31,9 @@
   }
 
   function selectTab(tab) {
-    const index = tabs.indexOf(tab);
+    selectedTabIndex = tabs.indexOf(tab);
     selectedTab.set(tab);
-    selectedPanel.set(panels[index]);
+    selectedPanel.set(panels[selectedTabIndex]);
   }
 
   setContext(TABS, {
@@ -59,7 +59,7 @@
   });
 
   onMount(() => {
-    selectTab(tabs[initialSelectedIndex]);
+    selectTab(tabs[selectedTabIndex]);
   });
 
   afterUpdate(() => {
@@ -68,6 +68,11 @@
       labeledBy.update(labeledByData => ({...labeledByData, [panels[i].id]: tabs[i].id}));
     }
   });
+
+  $: selectedTabIndex, ()=>{
+    selectedTab.set(tabs[selectedTabIndex]);
+    selectedPanel.set(panels[selectedTabIndex]);
+  };
 
   async function handleKeyDown(event) {
     if (event.target.classList.contains('svelte-tabs__tab')) {
