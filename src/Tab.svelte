@@ -49,7 +49,7 @@
   id={tab.id}
   aria-controls={$controls[tab.id]}
   aria-selected={isSelected}
-  tabindex="{isSelected ? 0 : -1}"
+  tabindex="{isSelected ? -1 : 0}"
   class:svelte-tabs__selected={isSelected}
   class="svelte-tabs__tab"
   on:click={() => selectTab(tab)}>
