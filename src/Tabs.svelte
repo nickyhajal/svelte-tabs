@@ -36,6 +36,16 @@
     selectedPanel.set(panels[selectedTabIndex]);
   }
 
+  export function nextTab() {
+    const nextTab = selectedTabIndex + 1
+    selectedTab(tabs[nextTab])
+  }
+  
+  export function prevTab() {
+    const prevTab = selectedTabIndex - 1
+    selectedTab(tabs[prevTab])
+  }
+  
   setContext(TABS, {
     registerTab(tab) {
       registerItem(tabs, tab, selectedTab);
