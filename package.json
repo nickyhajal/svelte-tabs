@@ -16,10 +16,10 @@
     "@testing-library/svelte": "^1.8.0",
     "jest": "^24.8.0",
     "jest-transform-svelte": "^2.0.2",
-    "rollup": "^1.11.0",
-    "rollup-plugin-node-resolve": "^4.0.0",
-    "rollup-plugin-svelte": "^5.0.0",
-    "svelte": "^3.0.0"
+    "rollup": "^2.53.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^7.1.0",
+    "svelte": "^3.38.3"
   },
   "keywords": [
     "svelte",
@@ -45,5 +45,9 @@
     "src/TabList.svelte",
     "src/TabPanel.svelte",
     "src/Tabs.svelte"
-  ]
+  ],
+  "dependencies": {
+    "rollup-plugin-import-css": "^3.0.0",
+    "rollup-plugin-postcss": "^4.0.0"
+  }
 }
